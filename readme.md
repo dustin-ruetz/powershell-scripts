@@ -1,5 +1,5 @@
 # powershell-scripts
 
-[PowerShell][powershell] scripts to configure applications and OS settings in a standardized way.
+[PowerShell][powershell] scripts to automate configuration of applications and operating system settings.
 
 [powershell]: https://microsoft.com/powershell
