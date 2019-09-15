@@ -1,6 +1,14 @@
-# JSON pretty printer
-# adapted from Stack Overflow answer by Nimai
-# https://stackoverflow.com/a/55384556
+<#
+  .SYNOPSIS
+    JSON pretty printer.
+
+  .DESCRIPTION
+    Format JSON data with correct indentation and spacing.
+
+  .NOTES
+    * Adapted from Stack Overflow answer by Nimai.
+    * https://stackoverflow.com/a/55384556
+#>
 
 Function Format-Json([Parameter(Mandatory, ValueFromPipeline)][String] $json) {
   $indent = 0

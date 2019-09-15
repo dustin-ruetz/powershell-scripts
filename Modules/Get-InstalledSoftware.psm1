@@ -1,11 +1,20 @@
-# generate a list of installed software
-# adapted from Anthony Howell's (i.e. ThePoShWolf) blog post and PowerShell Utilities repository
-# https://theposhwolf.com/howtos/Using-Powershell-to-get-a-list-of-installed-software-from-a-remote-computer-fast-as-lightning
-# https://github.com/ThePoShWolf/Utilities/blob/master/Misc/Get-InstalledSoftware.ps1
+<#
+  .SYNOPSIS
+    Generate a list of installed software.
 
-# cSpell: disable
+  .DESCRIPTION
+    List the computer's installed software by checking registry
+    locations for the LocalMachine (lm) and CurrentUser (cu).
+
+  .NOTES
+    * Adapted from Anthony Howell's (i.e. ThePoShWolf) blog post and PowerShell Utilities repository.
+    * https://theposhwolf.com/howtos/Using-Powershell-to-get-a-list-of-installed-software-from-a-remote-computer-fast-as-lightning
+    * https://github.com/ThePoShWolf/Utilities/blob/master/Misc/Get-InstalledSoftware.ps1
+#>
 
 Function Get-InstalledSoftware {
+  # cSpell: disable
+
   <#
   Param(
     [Alias('Computer', 'ComputerName', 'HostName')]

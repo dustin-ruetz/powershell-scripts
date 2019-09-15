@@ -1,3 +1,8 @@
+<#
+  .SYNOPSIS
+    Print out a list of changed settings.
+#>
+
 Function Write-ChangedSettings {
   Param (
     # to specify that a function parameter be of the

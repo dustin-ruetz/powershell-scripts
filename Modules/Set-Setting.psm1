@@ -1,4 +1,9 @@
-﻿Function Set-Setting {
+﻿<#
+  .SYNOPSIS
+    Change a registry setting.
+#>
+
+Function Set-Setting {
   Param (
     [String]$Path,
     [String]$Name,

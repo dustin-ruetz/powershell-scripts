@@ -1,5 +1,12 @@
+<#
+  .SYNOPSIS
+    Get the operating system.
+
+  .NOTES
+    PowerShell Core (i.e. v6+) features built-in $IsOperatingSystem booleans.
+#>
+
 Function Get-OperatingSystem {
-  # PowerShell Core (i.e. v6+) features built-in $IsOperatingSystem booleans
   If ($IsMacOS) {
     Return 'macOS'
   }
