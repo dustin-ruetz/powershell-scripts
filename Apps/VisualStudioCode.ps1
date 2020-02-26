@@ -25,6 +25,10 @@ If ($Proceed -eq 'y') {
 
 $Settings = [ordered]@{
   '// vscode settings' = ''
+  'editor.codeActionsOnSave' = @{
+    'source.fixAll' = $true
+  }
+  'editor.formatOnSave' = $true
   'editor.minimap.enabled' = $false
   'editor.renderWhitespace' = 'selection'
   'files.insertFinalNewline' = $true
@@ -84,7 +88,6 @@ $Settings = [ordered]@{
     'recurse',
     'Ruetz'
   )
-  'eslint.autoFixOnSave' = $true
   'material-icon-theme.activeIconPack' = 'react'
   'material-icon-theme.showUpdateMessage' = $true
   'powershell.codeFormatting.useCorrectCasing' = $true
@@ -94,12 +97,12 @@ $Settings = [ordered]@{
 $OperatingSystem = Get-OperatingSystem
 
 $Path =
-  If ($OperatingSystem -eq 'macOS') {
-    'mac-path'
-  }
-  ElseIf ($OperatingSystem -eq 'Windows') {
-    "$(Get-ScoopAppsPath)/vscode-portable/current/data/user-data/User/settings.json"
-  }
+If ($OperatingSystem -eq 'macOS') {
+  'mac-path'
+}
+ElseIf ($OperatingSystem -eq 'Windows') {
+  "$(Get-ScoopAppsPath)/vscode-portable/current/data/user-data/User/settings.json"
+}
 
 # convert the settings to JSON and write to disk
 $Settings | ConvertTo-Json | Format-Json | Set-Content $Path
