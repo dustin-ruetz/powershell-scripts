@@ -82,6 +82,7 @@ $Settings = [ordered]@{
   )
   'cSpell.userWords' = @(
     'autohotkey',
+    'bitwarden',
     'cmder',
     'editorconfig',
     'hashcheck',
