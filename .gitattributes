@@ -1,16 +1,10 @@
-# adapted from "Mind the End of Your Line" article by Tim Clem
-# https://adaptivepatchwork.com/2012/03/01/mind-the-end-of-your-line
-
 # make git detect all text files and auto-normalize them (convert 'crlf to' 'lf')
 # declare this setting first so that subsequent lines can override it
 * text=auto
 
 # these file types are text; they should be normalized
-# "Git will run CRLF to LF replacement on these files every time they are
-# written to the object database, and the reverse replacement will be run
-# when writing out to the working directory."
-*.md    text
-*.ps1   text
-*.psm1  text
+*.md   text
+*.ps1  text
+*.psm1 text
 
 # these file types are binary; they should not be normalized
