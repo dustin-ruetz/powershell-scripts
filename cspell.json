@@ -1,0 +1,19 @@
+{
+  // version of the cspell.json settings file (always 0.1)
+  "version": "0.1",
+  "language": "en",
+  // words - always considered correct
+  "words": [
+    "Consolas",
+    "dbaeumer",
+    "HKCU",
+    "HKEY",
+    "hrefs",
+    "Nimai",
+    "pkief",
+    "slevesque",
+    "streetsidesoftware"
+  ],
+  // flagWords - always considered incorrect
+  "flagWords": []
+}

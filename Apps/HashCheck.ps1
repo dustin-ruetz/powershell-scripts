@@ -7,7 +7,7 @@ $Slug = $Name.ToLower()
 
 Write-Title $Name
 
-$AppInfo = Get-InstalledSoftware | Where-Object {$_.Name -Match $Name}
+$AppInfo = Get-InstalledSoftware | Where-Object { $_.Name -Match $Name }
 If ($AppInfo.Version) {
   $Version = $AppInfo.Version
   Write-Host "$Slug-$Version is installed."
@@ -57,5 +57,3 @@ If ($Proceed -eq 'y') {
 Else {
   Exit
 }
-
-# cSpell:words hrefs

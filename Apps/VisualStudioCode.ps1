@@ -113,5 +113,3 @@ Write-ChangedSettings $Settings
 
 Read-Host 'Press enter to exit'
 Exit
-
-# cSpell:words dbaeumer, pkief, slevesque, streetsidesoftware

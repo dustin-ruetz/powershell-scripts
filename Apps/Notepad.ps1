@@ -28,7 +28,7 @@ $FontSize = $Settings.FontSize
 $FontSize | Add-Member -NotePropertyName 'ValueComputed' -NotePropertyValue ($FontSize.value * 10)
 
 # create an empty ordered dictionary
-$OrderedSettings = [Ordered]@{}
+$OrderedSettings = [Ordered]@{ }
 
 # iterate through all setting objects in the $Settings object
 $Settings.PSObject.Properties | ForEach-Object {
@@ -36,7 +36,7 @@ $Settings.PSObject.Properties | ForEach-Object {
   $Setting = $_.Value
 
   # determine whether to set the setting's $ValueComputed or $Value
-  $ValueToSet = If ($Setting.ValueComputed) {$Setting.ValueComputed} Else {$Setting.Value}
+  $ValueToSet = If ($Setting.ValueComputed) { $Setting.ValueComputed } Else { $Setting.Value }
 
   # HKCU is an abbreviation of the registry's 'HKEY_CURRENT_USER'
   Set-Setting 'HKCU:\Software\Microsoft\Notepad' $Setting.Property $ValueToSet
@@ -49,5 +49,3 @@ Write-ChangedSettings $OrderedSettings
 
 Read-Host 'Press enter to exit'
 Exit
-
-# cSpell:words Consolas, HKCU, HKEY
