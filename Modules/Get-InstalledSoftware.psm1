@@ -48,17 +48,17 @@ Function Get-InstalledSoftware {
     foreach ($key in $lmKeys) {
       $regKey = $remoteLMRegKey.OpenSubkey($key)
       foreach ($subName in $regKey.GetSubkeyNames()) {
-        foreach($sub in $regKey.OpenSubkey($subName)) {
+        foreach ($sub in $regKey.OpenSubkey($subName)) {
           $masterKeys += (New-Object PSObject -Property @{
-            'ComputerName' = $Computer
-            'Name' = $sub.GetValue('displayname')
-            'SystemComponent' = $sub.GetValue('systemcomponent')
-            'ParentKeyName' = $sub.GetValue('parentkeyname')
-            'Version' = $sub.GetValue('DisplayVersion')
-            'UninstallCommand' = $sub.GetValue('UninstallString')
-            'InstallDate' = $sub.GetValue('InstallDate')
-            'RegPath' = $sub.ToString()
-          })
+              'ComputerName' = $Computer
+              'Name' = $sub.GetValue('displayname')
+              'SystemComponent' = $sub.GetValue('systemcomponent')
+              'ParentKeyName' = $sub.GetValue('parentkeyname')
+              'Version' = $sub.GetValue('DisplayVersion')
+              'UninstallCommand' = $sub.GetValue('UninstallString')
+              'InstallDate' = $sub.GetValue('InstallDate')
+              'RegPath' = $sub.ToString()
+            })
         }
       }
     }
@@ -69,27 +69,27 @@ Function Get-InstalledSoftware {
         foreach ($subName in $regKey.getsubkeynames()) {
           foreach ($sub in $regKey.opensubkey($subName)) {
             $masterKeys += (New-Object PSObject -Property @{
-              'ComputerName' = $Computer
-              'Name' = $sub.GetValue('displayname')
-              'SystemComponent' = $sub.GetValue('systemcomponent')
-              'ParentKeyName' = $sub.GetValue('parentkeyname')
-              'Version' = $sub.GetValue('DisplayVersion')
-              'UninstallCommand' = $sub.GetValue('UninstallString')
-              'InstallDate' = $sub.GetValue('InstallDate')
-              'RegPath' = $sub.ToString()
-            })
+                'ComputerName' = $Computer
+                'Name' = $sub.GetValue('displayname')
+                'SystemComponent' = $sub.GetValue('systemcomponent')
+                'ParentKeyName' = $sub.GetValue('parentkeyname')
+                'Version' = $sub.GetValue('DisplayVersion')
+                'UninstallCommand' = $sub.GetValue('UninstallString')
+                'InstallDate' = $sub.GetValue('InstallDate')
+                'RegPath' = $sub.ToString()
+              })
           }
         }
       }
     }
 
-    $woFilter = {$null -ne $_.name -AND $_.SystemComponent -ne '1' -AND $null -eq $_.ParentKeyName}
+    $woFilter = { $null -ne $_.name -AND $_.SystemComponent -ne '1' -AND $null -eq $_.ParentKeyName }
     $props = 'Name', 'Version', 'ComputerName', 'Installdate', 'UninstallCommand', 'RegPath'
     $masterKeys = ($masterKeys | Where-Object $woFilter | Select-Object $props | Sort-Object Name)
     $masterKeys
   }
 
-  End {}
+  End { }
 }
 
 Export-ModuleMember Get-InstalledSoftware
