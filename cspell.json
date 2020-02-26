@@ -1,8 +1,8 @@
 {
-  // version of the cspell.json settings file (always 0.1)
+  "// version": "version of this settings file (always 0.1)",
   "version": "0.1",
   "language": "en",
-  // words - always considered correct
+  "// words": "always considered correct",
   "words": [
     "Consolas",
     "dbaeumer",
@@ -14,6 +14,6 @@
     "slevesque",
     "streetsidesoftware"
   ],
-  // flagWords - always considered incorrect
+  "// flagWords": "always considered incorrect",
   "flagWords": []
 }
