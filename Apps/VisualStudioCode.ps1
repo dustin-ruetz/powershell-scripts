@@ -91,6 +91,7 @@ $Settings = [ordered]@{
   )
   'material-icon-theme.activeIconPack' = 'react'
   'material-icon-theme.showUpdateMessage' = $true
+  'powershell.codeFormatting.alignPropertyValuePairs' = $false
   'powershell.codeFormatting.useCorrectCasing' = $true
   'powershell.integratedConsole.showOnStartup' = $false
 }
